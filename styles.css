@@ -102,7 +102,9 @@ a {
 .hero h1,
 .section-heading h2,
 .price-card h3,
-.service-card h3 {
+.service-card h3,
+.resource-card h3,
+.sector-card h3 {
   font-family: "Space Grotesk", "Segoe UI", sans-serif;
 }
 
@@ -141,6 +143,10 @@ a {
   padding: 72px 0 44px;
 }
 
+.hero-compact {
+  padding-bottom: 28px;
+}
+
 .eyebrow {
   margin: 0 0 10px;
   text-transform: uppercase;
@@ -154,7 +160,7 @@ a {
   margin: 0;
   font-size: clamp(2.7rem, 5vw, 5.2rem);
   line-height: 0.98;
-  max-width: 11ch;
+  max-width: 12ch;
 }
 
 .hero-text,
@@ -165,7 +171,9 @@ a {
 .contact-card p,
 .mockup-stat p,
 .mockup-grid p,
-.stats p {
+.stats p,
+.resource-card p,
+.sector-card p {
   color: var(--muted);
   line-height: 1.7;
 }
@@ -242,7 +250,9 @@ a {
 .price-card,
 .contact-card,
 .stats article,
-.process-list article {
+.process-list article,
+.resource-card,
+.sector-card {
   border: 1px solid var(--line);
   background: var(--surface);
   backdrop-filter: blur(16px);
@@ -341,7 +351,9 @@ a {
 .stats article,
 .service-card,
 .price-card,
-.process-list article {
+.process-list article,
+.resource-card,
+.sector-card {
   padding: 22px;
   border-radius: var(--radius-lg);
 }
@@ -374,12 +386,21 @@ a {
   gap: 16px;
 }
 
+.cards-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .cards-three {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.cards-four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .service-card span,
-.price-label {
+.price-label,
+.resource-label {
   display: inline-flex;
   margin-bottom: 16px;
   color: var(--accent-deep);
@@ -387,9 +408,24 @@ a {
 }
 
 .service-card h3,
+.resource-card h3,
+.sector-card h3,
 .price-card h3 {
   margin: 0 0 10px;
   font-size: 1.35rem;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 12px;
+  color: var(--accent-deep);
+  font-weight: 700;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  text-decoration: underline;
 }
 
 .process-list {
@@ -433,17 +469,38 @@ a {
   align-items: center;
 }
 
+.price-notes {
+  display: grid;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  background: rgba(255, 252, 247, 0.72);
+}
+
+.price-notes p {
+  margin: 0;
+}
+
 .site-footer {
   padding: 22px 0 12px;
   color: var(--muted);
   text-align: center;
 }
 
+@media (max-width: 1100px) {
+  .cards-four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 980px) {
   .site-header,
   .hero,
   .stats,
+  .cards-two,
   .cards-three,
+  .cards-four,
   .pricing-grid,
   .process-list,
   .contact-card,
